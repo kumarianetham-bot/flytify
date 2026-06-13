@@ -1,34 +1,10 @@
-<!-- ============================================ -->
-<!-- BROCHURE TEMPLATE 2 — Flytify               -->
-<!-- ============================================ -->
-<!--                                                 -->
-<!-- WHAT YOU WILL LEARN:                            -->
-<!--   - An alternative brochure layout               -->
-<!--   - Different colour placement                   -->
-<!--   - More advanced CSS techniques                 -->
-<!--                                                 -->
-<!-- YOUR TASK: Replace this entire file with        -->
-<!-- your own brochure design (different from        -->
-<!-- model1.html). Keep the {{PLACEHOLDER}} markers. -->
-<!--                                                 -->
-<!-- TIP: Make this one look completely different    -->
-<!-- from model1.html so users have a real choice.   -->
-<!-- Try a different layout: sidebar, cards,         -->
-<!-- full-bleed hero image, etc.                     -->
-<!-- ============================================ -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[Model 2 — Your Design Name]</title>
+    <title>Model 2 — Modern</title>
     <style>
-        /*
-         * TODO: Replace this with your own design.
-         * Try a completely different layout from model1.html.
-         */
-
         @page {
             size: A4;
             margin: 0;
@@ -48,13 +24,11 @@
             margin: 0 auto;
             min-height: 297mm;
             display: grid;
-            /* TODO: Try a different grid layout */
             grid-template-columns: 1fr 2fr;
         }
 
-        /* ─── SIDEBAR ─────────────────────────────────── */
+        /* ─── SIDEBAR ─────────────────────────────── */
         .sidebar {
-            /* EDIT: Use your primary colour for the sidebar background */
             background-color: {{PRIMARY_COLOR}};
             color: #ffffff;
             padding: 30px;
@@ -70,28 +44,50 @@
         }
 
         .sidebar h1 {
-            font-size: 24px;
+            font-size: 22px;
             margin-bottom: 10px;
+            line-height: 1.3;
         }
 
         .sidebar .tagline {
-            font-size: 14px;
+            font-size: 13px;
             font-style: italic;
-            opacity: 0.9;
+            opacity: 0.85;
             margin-bottom: 30px;
         }
 
-        /* ─── MAIN CONTENT ────────────────────────────── */
+        .sidebar-contact {
+            border-top: 1px solid rgba(255,255,255,0.3);
+            padding-top: 20px;
+        }
+
+        .sidebar-contact p {
+            font-size: 13px;
+            margin-bottom: 8px;
+            opacity: 0.9;
+        }
+
+        .sidebar-contact span {
+            display: block;
+            font-size: 11px;
+            opacity: 0.7;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ─── MAIN CONTENT ────────────────────────── */
         .main-content {
-            padding: 30px;
+            padding: 35px 30px;
+            background: #ffffff;
         }
 
         .main-content h2 {
-            /* EDIT: Use your secondary colour for headings */
             color: {{SECONDARY_COLOR}};
-            font-size: 20px;
+            font-size: 18px;
             margin-bottom: 10px;
-            margin-top: 20px;
+            margin-top: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .main-content h2:first-child {
@@ -99,123 +95,107 @@
         }
 
         .main-content p {
-            margin-bottom: 15px;
+            margin-bottom: 12px;
+            font-size: 14px;
+            color: #444;
         }
 
-        /* ─── CONTACT STRIP ───────────────────────────── */
-        .contact-strip {
+        .main-content ul {
+            margin: 10px 0 15px 20px;
+        }
+
+        .main-content ul li {
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #444;
+        }
+
+        .why-box {
             margin-top: 20px;
             padding: 15px;
-            /* EDIT: Use a light tint of your brand colour */
-            background-color: rgba(59, 130, 246, 0.1);  /* TODO: Replace with {{PRIMARY_COLOR}} at low opacity */
+            background-color: #f5f5f5;
             border-left: 4px solid {{PRIMARY_COLOR}};
+            border-radius: 0 6px 6px 0;
         }
 
-        .contact-strip p {
-            margin-bottom: 5px;
-            font-size: 14px;
+        .why-box p {
+            margin: 0;
+            font-style: italic;
+            color: #555;
         }
 
-        .contact-strip strong {
-            color: {{PRIMARY_COLOR}};
-        }
-
-        /* ─── FOOTER ──────────────────────────────────── */
+        /* ─── FOOTER ──────────────────────────────── */
         .footer {
             grid-column: 1 / -1;
             text-align: center;
-            padding: 15px;
-            font-size: 12px;
+            padding: 12px;
+            font-size: 11px;
             color: #888;
             border-top: 1px solid #ddd;
+            background: #fafafa;
         }
     </style>
-
-    <!-- TODO: Add external fonts if desired -->
 </head>
 <body>
 
     <div class="brochure">
 
-        <!-- ════════════════════════════════════════════ -->
-        <!-- SIDEBAR                                      -->
-        <!-- ════════════════════════════════════════════ -->
-        <!-- TODO: Redesign this sidebar -->
-
+        <!-- SIDEBAR -->
         <div class="sidebar">
             <div>
                 <div class="logo">
-                    <!-- TODO: Style the logo for the sidebar -->
                     <img src="{{LOGO_PATH}}" alt="{{COMPANY_NAME}} logo">
                 </div>
-
                 <h1>{{COMPANY_NAME}}</h1>
                 <p class="tagline">{{TAGLINE}}</p>
             </div>
 
-            <!-- TODO: Sidebar bottom content (contact, social links, etc.) -->
-            <div>
-                <p style="font-size: 13px; opacity: 0.8;">{{FULL_NAME}}</p>
+            <div class="sidebar-contact">
+                <p>
+                    <span>Contact Person</span>
+                    {{FULL_NAME}}
+                </p>
+                <p>
+                    <span>Email</span>
+                    {{EMAIL}}
+                </p>
+                <p>
+                    <span>Phone</span>
+                    {{PHONE}}
+                </p>
             </div>
         </div>
 
-        <!-- ════════════════════════════════════════════ -->
-        <!-- MAIN CONTENT                                 -->
-        <!-- ════════════════════════════════════════════ -->
-        <!-- TODO: Replace with your own content -->
-
+        <!-- MAIN CONTENT -->
         <div class="main-content">
 
-            <h2>[Our Story]</h2>
-            <p>
-                [Write 2-3 paragraphs about your company's story, mission,
-                and values. What problem do you solve? Who do you serve?]
-            </p>
-            <p>
-                [This is the second paragraph of your story. Keep it engaging
-                and focused on the value you provide to customers.]
-            </p>
+            <h2>Our Story</h2>
+            <p>Welcome to {{COMPANY_NAME}}. We are passionate about
+            delivering exceptional services that make a real difference
+            for our clients. Founded with a vision to innovate, we
+            combine expertise with dedication.</p>
+            <p>Our mission is simple — to help businesses like yours
+            grow, thrive, and reach their full potential.</p>
 
-            <h2>[What We Offer]</h2>
-            <p>
-                [Describe your products or services. Use bullet points or
-                short paragraphs for clarity.]
-            </p>
-
-            <!-- TODO: Add a list or grid of services -->
+            <h2>What We Offer</h2>
             <ul>
-                <li>[Service/Product 1 — Brief description]</li>
-                <li>[Service/Product 2 — Brief description]</li>
-                <li>[Service/Product 3 — Brief description]</li>
+                <li>Professional consultation and business strategy</li>
+                <li>Creative design solutions for your brand</li>
+                <li>Reliable support and maintenance services</li>
             </ul>
 
-            <h2>[Why Choose Us]</h2>
-            <p>
-                [Explain your unique selling points. What makes you different
-                from competitors? Why should someone pick you?]
-            </p>
-
-            <!-- TODO: Add testimonial quotes, case studies, etc. -->
-
-            <!-- ════════════════════════════════════════ -->
-            <!-- CONTACT                                   -->
-            <!-- ════════════════════════════════════════ -->
-
-            <div class="contact-strip">
-                <p><strong>[Email:]</strong> {{EMAIL}}</p>
-                <p><strong>[Phone:]</strong> {{PHONE}}</p>
-                <!-- TODO: Add more contact details -->
-                <!-- <p><strong>[Web:]</strong> yourwebsite.com</p> -->
+            <h2>Why Choose Us</h2>
+            <div class="why-box">
+                <p>We bring years of experience, a passionate team,
+                and a commitment to excellence that sets us apart.
+                Your success is our success.</p>
             </div>
 
         </div>
 
-        <!-- ════════════════════════════════════════════ -->
-        <!-- FOOTER                                       -->
-        <!-- ════════════════════════════════════════════ -->
-
+        <!-- FOOTER -->
         <div class="footer">
-            <p>&copy; [Year] {{COMPANY_NAME}} — [All rights reserved]</p>
+            <p>&copy; 2026 {{COMPANY_NAME}} — All rights reserved | {{TAGLINE}}</p>
         </div>
 
     </div>
